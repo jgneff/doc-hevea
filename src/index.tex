@@ -1,0 +1,89 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+\documentclass[a5paper,11pt]{article}
+\usepackage{webtex}
+\usepackage[mono=false]{libertine}
+\usepackage[sf]{titlesec}
+
+% Sets line spacing for font size
+\setstretch{\elevenptlead}
+
+% Metadata variables
+\newcommand*{\thetitle}{Home – STATUS:6}
+\newcommand*{\theauthor}{John Neffenger}
+\newcommand*{\thedate}{\today}
+\newcommand*{\thesubject}{Sole proprietorship}
+
+% PDF Metadata
+\hypersetup{%
+    colorlinks=true,
+    allcolors=blue,
+    allbordercolors=blue,
+    pdflang={en},
+    pdftitle={\thetitle},
+    pdfauthor={\theauthor},
+    pdfsubject={\thesubject},
+    pdfkeywords={status:6, sole, proprietorship},
+}
+
+% Hyphenation rules
+\hyphenation{%
+}
+
+% Sets title info early for HEVEA
+\title{\thetitle}
+\author{\theauthor}
+\date{\thedate}
+
+% Document content
+\begin{document}
+%\maketitle
+
+\section{Projects}
+
+This section lists my projects.
+
+\section{Source}
+
+\noindent
+This is the source code of a Java program:
+
+\begin{source}{Java}
+public class HelloWorldApp {
+    public static void main(String[] args) {
+        // Prints the string to the console
+        System.out.println("Hello World!");
+    }
+}
+\end{source}
+
+\noindent
+This is a fragment of HTML source code:
+
+\begin{source}{HTML}
+<!-- Fleurons are stylized flowers. -->
+<div class="center">
+<img class="fleuron" src="images/fleuron.svg"
+    width="45" height="16" alt="* * *">
+</div>
+\end{source}
+
+\noindent
+The statement \webcode{System.out.println("Hello World!");} prints to the console.
+
+\noindent
+Here is a nice table about Ubuntu Long Term Releases.
+
+\ifthenelse{\boolean{hevea}}{}{\bigskip\sffamily}
+\noindent
+\begin{tabular}{cccrr}
+\toprule
+\hdr{Ubuntu Release} & \hdr{Minimum Kernel} & \hdr{C Library} & \hdr{Size (MB)} & \hdr{Packages} \\
+\midrule
+14.04 LTS             & 2.6.32 & 2.19 & 190 & 46,273 \\
+\webstrong{16.04 LTS} & 3.2.0  & 2.23 & 109 & 54,520 \\
+\webstrong{18.04 LTS} & 3.2.0  & 2.27 &  55 & 59,624 \\
+\bottomrule
+\end{tabular}
+\ifthenelse{\boolean{hevea}}{}{\rmfamily}
+
+\end{document}

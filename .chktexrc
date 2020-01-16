@@ -1,0 +1,10 @@
+# ChkTeX resource file
+# See: /etc/chktexrc
+VerbEnvir
+{
+    source terminal
+}
+WipeArg
+{
+    \webcode:{}
+}

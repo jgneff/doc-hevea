@@ -1,0 +1,39 @@
+STATUS:6
+
+  • Home
+  • Contact
+  • About
+
+Projects
+
+This section lists my projects.
+
+Source
+
+This is the source code of a Java program:
+
+public class HelloWorldApp {
+    public static void main(String[] args) {
+        // Prints the string to the console
+        System.out.println("Hello World!");
+    }
+}
+
+This is a fragment of HTML source code:
+
+<!-- Fleurons are stylized flowers. -->
+<div class="center">
+<img class="fleuron" src="images/fleuron.svg"
+    width="45" height="16" alt="* * *">
+</div>
+
+The statement System.out.println("Hello World!"); prints to the console.
+
+Here is a nice table about Ubuntu Long Term Releases.
+
+Ubuntu Release Minimum Kernel C Library Size (MB) Packages
+14.04 LTS      2.6.32         2.19      190       46,273
+16.04 LTS      3.2.0          2.23      109       54,520
+18.04 LTS      3.2.0          2.27      55        59,624
+
+Copyright © 2020 John Neffenger

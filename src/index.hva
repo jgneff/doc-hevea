@@ -1,0 +1,11 @@
+% Uncomment for external stylesheet
+%\externalcsstrue
+
+% Comment out "\oldmeta" to remove HEVEA styles
+% http://hevea.inria.fr/doc/manual024.html
+\let\oldmeta=\@meta
+\renewcommand{\@meta}{\oldmeta
+\rawhtmlinput{src/meta.html}}
+
+\htmlhead{\rawhtmlinput{src/header.html}}
+\htmlfoot{\rawhtmlinput{src/footer.html}}

@@ -1,0 +1,15 @@
+body {font-family: Caladea, Cambria, Tinos, "Times New Roman", serif;}
+table {font-family: Carlito, Calibri, Arimo, Arial, sans-serif;}
+header, nav  {text-align: center;}
+nav > ul {padding: 0; list-style-type: none;}
+nav > ul > li {display: inline; padding-left: 2ch;}
+nav > ul > li:first-child {padding-left: 0}
+table {width: auto;}
+tbody tr:first-child {border-bottom: 1px solid var(--border);}
+tbody tr:nth-child(even) {background-color: unset;}
+tbody tr:nth-child(2n+3) {background-color: var(--background-alt);}
+.source, .terminal {padding: 10px; overflow-x: auto; background: var(--background); color: var(--code); border-radius: 6px;}
+@media (prefers-color-scheme: dark) {
+  div.source > span, div.terminal > span {filter: invert(100%);}
+  header > img {filter: invert(100%);}
+}
