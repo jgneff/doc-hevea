@@ -21,7 +21,7 @@ LACHECK = lacheck
 # Command options
 LATEXMK_FLAGS = -pdf
 QPDF_FLAGS    = --linearize
-HEVEA_FLAGS   = -I $(WEBTEX) -fix -O -exec xxdate.exe
+HEVEA_FLAGS   = -I $(WEBTEX) -I include -fix -O -exec xxdate.exe
 TIDY_FLAGS    = -config $(TIDYCONF)
 W3M_FLAGS     = -dump -cols 73 -T text/html
 
@@ -53,7 +53,7 @@ files = $(addprefix docs/index.,pdf html txt)
 # Pattern Rules
 # ======================================================================
 
-VPATH = src
+VPATH = src:include
 
 tmp/%.pdf: %.tex $(dep_latex)
 	$(LATEXMK) $(LATEXMK_FLAGS) -output-directory=$(@D) $<
@@ -61,7 +61,7 @@ tmp/%.pdf: %.tex $(dep_latex)
 docs/%.pdf: tmp/%.pdf
 	$(QPDF) $(QPDF_FLAGS) $< $@
 
-tmp/%.html: %.hva %.tex meta.html header.html footer.html $(dep_hevea)
+tmp/%.html: %.hva %.tex meta.html head.html foot.html $(dep_hevea)
 	$(HEVEA) $(HEVEA_FLAGS) -o $@ $< $(word 2,$^)
 
 docs/%.html: tmp/%.html $(dep_tidy)

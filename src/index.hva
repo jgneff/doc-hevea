@@ -5,7 +5,11 @@
 % http://hevea.inria.fr/doc/manual024.html
 \let\oldmeta=\@meta
 \renewcommand{\@meta}{\oldmeta
-\rawhtmlinput{src/meta.html}}
+\@print{<meta name="author" content="}\@getprint{\theauthor}\@print{">}
+\@print{<meta name="description" content="}\@getprint{\subject}\@print{">}
+\rawhtmlinput{meta.html}
+\@print{<link rel="canonical" href="}\@getprint{\canonical}\@print{">}
+}
 
-\htmlhead{\rawhtmlinput{src/header.html}}
-\htmlfoot{\rawhtmlinput{src/footer.html}}
+\htmlhead{\rawhtmlinput{head.html}}
+\htmlfoot{\rawhtmlinput{foot.html}}

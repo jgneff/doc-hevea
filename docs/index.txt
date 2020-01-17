@@ -1,8 +1,8 @@
 STATUS:6
 
   • Home
+  • Example
   • Contact
-  • About
 
 Projects
 
