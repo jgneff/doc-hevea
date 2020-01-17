@@ -36,4 +36,5 @@ Ubuntu Release Minimum Kernel C Library Size (MB) Packages
 16.04 LTS      3.2.0          2.23      109       54,520
 18.04 LTS      3.2.0          2.27      55        59,624
 
-Copyright © 2020 John Neffenger
+Copyright © 2020 John Neffenger. STATUS:6 is a registered trademark of
+John Neffenger. Check HTML.
