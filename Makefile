@@ -5,9 +5,6 @@
 # Directory added to HEVEA search path
 WEBTEX = $(HOME)/texmf/tex/latex/webtex
 
-# HTML Tidy configuration file
-TIDYCONF = $(HOME)/.tidy/html5.conf
-
 # Commands
 LATEXMK = latexmk
 QPDF    = qpdf
@@ -27,6 +24,14 @@ W3M_FLAGS     = -dump -cols 73 -T text/html
 
 # Warning 38: You should not use punctuation in front of quotes.
 CHKTEX_FLAGS = --verbosity=2 --quiet --nowarn=38
+
+# HTML Tidy options
+# https://api.html-tidy.org/tidy/quickref_next.html
+css_prefix = tidy
+tidy_html = --quiet yes --force-output yes --tidy-mark no --wrap 0 \
+    --add-meta-charset yes --doctype html5 --output-html yes \
+    --clean yes --quote-nbsp no --css-prefix $(css_prefix) \
+    --enclose-block-text yes --enclose-text yes --hide-comments yes
 
 # Transliterates characters for plain text output
 #   U+00A0 NO-BREAK SPACE --> U+0020 SPACE
@@ -65,7 +70,7 @@ tmp/%.html: %.hva %.tex meta.html head.html foot.html $(dep_hevea)
 	$(HEVEA) $(HEVEA_FLAGS) -o $@ $< $(word 2,$^)
 
 docs/%.html: tmp/%.html $(dep_tidy)
-	$(TIDY) $(TIDY_FLAGS) $< | $(SED) $(sed_html) > $@
+	$(TIDY) $(tidy_html) $< | $(SED) $(sed_html) > $@
 
 tmp/%.txt: docs/%.html
 	$(W3M) $(W3M_FLAGS) $< > $@
