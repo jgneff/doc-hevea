@@ -36,5 +36,5 @@ Ubuntu Release Minimum Kernel C Library Size (MB) Packages
 16.04 LTS      3.2.0          2.23      109       54,520
 18.04 LTS      3.2.0          2.27      55        59,624
 
-This page was generated from LaTeX by HEVEA. Validate the HTML. Get the
-source on GitHub.
+This page was generated from LaTeX by HEVEA and styled by Water.css.
+Validate the HTML. Get the source on GitHub.
