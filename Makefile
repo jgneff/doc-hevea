@@ -6,14 +6,15 @@
 WEBTEX = $(HOME)/texmf/tex/latex/webtex
 
 # Commands
-LATEXMK = latexmk
-QPDF    = qpdf
-HEVEA   = $(HOME)/opt/hevea-2.32/bin/hevea
-TIDY    = $(HOME)/opt/tidy-html5-5.7.27/bin/tidy
-SED     = sed
-W3M     = w3m
-CHKTEX  = chktex
-LACHECK = lacheck
+LATEXMK  = latexmk
+QPDF     = qpdf
+HEVEA    = hevea
+TIDY     = $(HOME)/opt/tidy-html5-5.7.27/bin/tidy
+SED      = sed
+W3M      = w3m
+COMPRESS = yui-compressor
+CHKTEX   = chktex
+LACHECK  = lacheck
 
 # Command options
 LATEXMK_FLAGS = -pdf
@@ -84,11 +85,15 @@ docs/%.txt: tmp/%.txt
 
 .PHONY: all check clean
 
-all: $(files)
+all: $(files) docs/styles/style.css
+
+docs/styles/style.css: custom.css site.css
+	$(COMPRESS) $^ > $@
+	$(COMPRESS) $(word 2,$^) >> $@
 
 check: index.tex
 	$(CHKTEX) $(CHKTEX_FLAGS) $<
 	$(LACHECK) $<
 
 clean:
-	rm -f tmp/*.* docs/*.*
+	rm -f tmp/*.* docs/*.* docs/styles/style.css
