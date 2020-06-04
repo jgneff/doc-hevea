@@ -85,10 +85,3 @@ table {
 .sc {
   font-variant: small-caps;
 }
-
-@media (prefers-color-scheme: dark) {
-  pre.highlight > code > span {
-    filter: invert(1); /* Inverts colors of syntax highlighting */
-    color: #00417a; /* Resets default color */
-  }
-}
