@@ -9,7 +9,7 @@ WEBTEX = $(HOME)/texmf/tex/latex/webtex
 LATEXMK  = latexmk
 QPDF     = qpdf
 HEVEA    = hevea
-TIDY     = $(HOME)/opt/tidy-html5-5.7.27/bin/tidy
+TIDY     = tidy
 SED      = sed
 W3M      = w3m
 COMPRESS = yui-compressor
@@ -18,7 +18,7 @@ LACHECK  = lacheck
 
 # Command options
 LATEXMK_FLAGS = -pdf
-QPDF_FLAGS    = --linearize
+QPDF_FLAGS    = --linearize --deterministic-id
 HEVEA_FLAGS   = -I $(WEBTEX) -I include -fix -O -exec xxdate.exe
 TIDY_FLAGS    = -config $(TIDYCONF)
 W3M_FLAGS     = -dump -cols 73 -T text/html
